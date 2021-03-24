@@ -1,0 +1,20 @@
+{
+  "name": "woo-shop-filter",
+  "version": "1.0.0",
+  "description": "A simple AJAX powered WooCommerce shop filter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chigozieorunta/woo-shop-filter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chigozieorunta/woo-shop-filter/issues"
+  },
+  "homepage": "https://github.com/chigozieorunta/woo-shop-filter#readme"
+}
