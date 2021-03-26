@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/chigozieorunta/woo-shop-filter/issues"
   },
-  "homepage": "https://github.com/chigozieorunta/woo-shop-filter#readme"
+  "homepage": "https://github.com/chigozieorunta/woo-shop-filter#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.9"
+  }
 }
