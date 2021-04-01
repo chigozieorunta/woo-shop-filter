@@ -1,0 +1,13 @@
+{
+    "name": "chigozieorunta/woo-shop-filter",
+    "description": "A simple AJAX powered WooCommerce shop filter.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Chigozie Orunta",
+            "email": "chigozieorunta@yahoo.com"
+        }
+    ],
+    "require": {}
+}
