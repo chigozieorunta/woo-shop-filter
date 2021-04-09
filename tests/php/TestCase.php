@@ -2,10 +2,10 @@
 /**
  * Tests Case class.
  *
- * @package SlackBot
+ * @package WooShopFilter
  */
 
-namespace SlackBot;
+namespace WooShopFilter;
 
 use Mockery;
 use WP_Mock;
