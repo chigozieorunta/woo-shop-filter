@@ -33,6 +33,7 @@ class Plugin {
 	 */
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_css' ] );
+		add_action( 'woocommerce_before_shop_loop', [ $this, 'get_form' ] );
 	}
 
 	/**
