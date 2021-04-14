@@ -1,5 +1,8 @@
-$base: 100;
-
-body {
-	width: calc($base/4);
+form.woo-shop-filter {
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
