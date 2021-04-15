@@ -1,1 +1,26 @@
-form.woo-shop-filter{margin:0;padding:0;max-width:100%;display:flex;justify-content:space-between;flex-wrap:wrap}
+form.woo-shop-filter {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form.woo-shop-filter select, form.woo-shop-filter button {
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: calc(25% - 10px);
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  height: 60px !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  font-family: "Cabin", Arial;
+}

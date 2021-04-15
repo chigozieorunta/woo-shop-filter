@@ -5,4 +5,21 @@ form.woo-shop-filter {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+
+	select, button {
+		padding: 1em;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		width: calc(25% - 10px);
+		box-sizing: border-box;
+		font-size: 1rem;
+		font-weight: 700;
+		letter-spacing: -0.25px;
+		appearance: none;
+		position: relative;
+		height: 60px !important;
+		margin: 0 !important;
+		text-decoration: none !important;
+		font-family: 'Cabin', Arial;
+	}
 }
