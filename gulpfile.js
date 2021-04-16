@@ -17,7 +17,7 @@ const compile = () => {
 	return src(paths.src.css)
 		.pipe(sass())
 		.pipe(autoprefixer())
-		.pipe(minify())
+		//.pipe(minify())
 		.pipe(dest(paths.dist.css));
 }
 
