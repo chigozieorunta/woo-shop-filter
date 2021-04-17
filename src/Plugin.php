@@ -20,6 +20,13 @@ class Plugin {
 	private static $instance;
 
 	/**
+	 * Custom data field
+	 *
+	 * @var string
+	 */
+	private $arg;
+
+	/**
 	 * Setup the plugin.
 	 *
 	 * @return void
@@ -46,9 +53,26 @@ class Plugin {
 	 */
 	public function get_custom_fields_data( $arg ) {
 		global $wpdb;
-		$results = $wpdb->get_results( 'SELECT DISTINCT meta_value FROM wp_postmeta WHERE meta_key LIKE "' . $arg . '"', OBJECT );
+		$this->arg = $arg;
+		$results   = $wpdb->get_results( 'SELECT DISTINCT meta_value FROM wp_postmeta WHERE meta_key LIKE "' . $arg . '"', OBJECT );
 
 		return $results;
+	}
+
+	/**
+	 * Get select input
+	 *
+	 * @param array $results Custom field data.
+	 *
+	 * @return string
+	 */
+	public function get_select( $results ) {
+		foreach($results as $result) {
+			$options .= sprintf(
+				'<option name="%1$s">%1$s</option>',
+				$result->meta_value
+			);
+		}
 	}
 
 	/**
