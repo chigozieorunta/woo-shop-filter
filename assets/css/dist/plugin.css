@@ -24,3 +24,10 @@ form.woo-shop-filter select, form.woo-shop-filter button {
   text-decoration: none !important;
   font-family: "Cabin", Arial;
 }
+form.woo-shop-filter button {
+  color: #fff;
+  background: #212121;
+  border: 1px solid #212121;
+  cursor: pointer;
+  transition: all 0.3s;
+}

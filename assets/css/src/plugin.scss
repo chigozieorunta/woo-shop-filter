@@ -22,4 +22,12 @@ form.woo-shop-filter {
 		text-decoration: none !important;
 		font-family: 'Cabin', Arial;
 	}
+
+	button {
+		color: #fff;
+		background: #212121;
+		border: 1px solid #212121;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
 }
