@@ -29,5 +29,10 @@ form.woo-shop-filter {
 		border: 1px solid #212121;
 		cursor: pointer;
 		transition: all 0.3s;
+
+		&:hover {
+			background: #f00;
+			border: 1px solid #f00;
+		}
 	}
 }

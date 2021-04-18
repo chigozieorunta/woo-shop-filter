@@ -31,3 +31,7 @@ form.woo-shop-filter button {
   cursor: pointer;
   transition: all 0.3s;
 }
+form.woo-shop-filter button:hover {
+  background: #f00;
+  border: 1px solid #f00;
+}
