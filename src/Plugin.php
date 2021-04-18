@@ -73,6 +73,12 @@ class Plugin {
 				$result->meta_value
 			);
 		}
+
+		$options = sprintf(
+			'<option value="" selected disabled>Choose %2$s</option>%1$s',
+			$options,
+			$this->arg
+		);
 	}
 
 	/**
