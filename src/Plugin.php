@@ -79,6 +79,14 @@ class Plugin {
 			$options,
 			$this->arg
 		);
+
+		$filter = sprintf(
+			'<select name="%2$s">%1$s</select>',
+			$options,
+			$this->arg
+		);
+
+		return $filter;
 	}
 
 	/**
