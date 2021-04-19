@@ -24,6 +24,15 @@ form.woo-shop-filter select, form.woo-shop-filter button {
   text-decoration: none !important;
   font-family: "Cabin", Arial;
 }
+form.woo-shop-filter select::-moz-placeholder {
+  color: #333;
+}
+form.woo-shop-filter select:-ms-input-placeholder {
+  color: #333;
+}
+form.woo-shop-filter select::placeholder {
+  color: #333;
+}
 form.woo-shop-filter button {
   color: #fff;
   background: #212121;

@@ -23,6 +23,12 @@ form.woo-shop-filter {
 		font-family: 'Cabin', Arial;
 	}
 
+	select {
+		&::placeholder {
+			color: #333;
+		}
+	}
+
 	button {
 		color: #fff;
 		background: #212121;
