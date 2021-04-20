@@ -90,6 +90,15 @@ class Plugin {
 	}
 
 	/**
+	 * Get button
+	 *
+	 * @return string
+	 */
+	public function get_button() {
+		return '<button type="submit">Filter Products</button>';
+	}
+
+	/**
 	 * Plugin Entry point based on Singleton
 	 *
 	 * @return Plugin $plugin Instance of the plugin abstraction.
