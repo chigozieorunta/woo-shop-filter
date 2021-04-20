@@ -44,3 +44,14 @@ form.woo-shop-filter button:hover {
   background: #f00;
   border: 1px solid #f00;
 }
+
+section.woo-shop-filter {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Cabin", Arial;
+  margin-top: 1em;
+  padding-bottom: 2em;
+  padding-top: 3em;
+  border-top: 1px dashed #ccc;
+  flex-wrap: wrap;
+}
