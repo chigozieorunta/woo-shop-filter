@@ -55,3 +55,6 @@ section.woo-shop-filter {
   border-top: 1px dashed #ccc;
   flex-wrap: wrap;
 }
+section.woo-shop-filter div {
+  width: 30%;
+}
