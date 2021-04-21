@@ -99,6 +99,23 @@ class Plugin {
 	}
 
 	/**
+	 * Get form
+	 *
+	 * @return string
+	 */
+	public function get_form() {
+		$form = sprintf(
+			'<form class="woo-shop-filter" method="POST" action="./">%1$s%2$s%3$s%4$s</form>',
+			get_select( 'brand' ),
+			get_select( 'model' ),
+			get_select( 'year' ),
+			get_button()
+		);
+
+		echo $form;
+	}
+
+	/**
 	 * Plugin Entry point based on Singleton
 	 *
 	 * @return Plugin $plugin Instance of the plugin abstraction.
