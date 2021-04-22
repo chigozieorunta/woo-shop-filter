@@ -60,5 +60,14 @@ section.woo-shop-filter {
 			max-width: 100%;
 			margin: 0 auto;
 		}
+
+		ul {
+			margin-top: 1em;
+
+			li {
+				padding-bottom: 0.75em;
+				line-height: 1.8;
+			}
+		}
 	}
 }

@@ -62,3 +62,10 @@ section.woo-shop-filter > div > img {
   max-width: 100%;
   margin: 0 auto;
 }
+section.woo-shop-filter > div ul {
+  margin-top: 1em;
+}
+section.woo-shop-filter > div ul li {
+  padding-bottom: 0.75em;
+  line-height: 1.8;
+}
