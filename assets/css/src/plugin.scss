@@ -53,7 +53,12 @@ section.woo-shop-filter {
 	border-top: 1px dashed #ccc;
 	flex-wrap: wrap;
 
-	div {
+	& > div {
 		width: 30%;
+
+		& > img {
+			max-width: 100%;
+			margin: 0 auto;
+		}
 	}
 }
