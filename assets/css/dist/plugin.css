@@ -69,3 +69,6 @@ section.woo-shop-filter > div ul li {
   padding-bottom: 0.75em;
   line-height: 1.8;
 }
+section.woo-shop-filter > div:last-child {
+  width: 25%;
+}
