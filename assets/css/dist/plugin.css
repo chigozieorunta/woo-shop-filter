@@ -81,3 +81,8 @@ section.woo-shop-filter > div:last-child p {
   line-height: 1.8;
   display: block;
 }
+
+section.woo-shop-filter-nav {
+  display: flex;
+  font-family: "Cabin", Arial;
+}
