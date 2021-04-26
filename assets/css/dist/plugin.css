@@ -86,3 +86,7 @@ section.woo-shop-filter-nav {
   display: flex;
   font-family: "Cabin", Arial;
 }
+section.woo-shop-filter-nav span {
+  margin-right: 2em;
+  font-size: 18px;
+}

@@ -90,4 +90,9 @@ section.woo-shop-filter {
 section.woo-shop-filter-nav {
 	display: flex;
 	font-family: 'Cabin', Arial;
+
+	span {
+		margin-right: 2em;
+		font-size: 18px;
+	}
 }
