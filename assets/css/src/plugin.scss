@@ -21,6 +21,11 @@ form.woo-shop-filter {
 		margin: 0 !important;
 		text-decoration: none !important;
 		font-family: 'Cabin', Arial;
+
+		@media only screen and (max-width: 640px) {
+			width: 100% !important;
+			margin-bottom: 1em !important;
+		}
 	}
 
 	select {
