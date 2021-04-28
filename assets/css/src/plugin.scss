@@ -89,6 +89,10 @@ section.woo-shop-filter {
 				display: block;
 			}
 		}
+
+		@media only screen and (max-width: 640px) {
+			width: 50% !important;
+		}
 	}
 }
 

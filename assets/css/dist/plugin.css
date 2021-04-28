@@ -87,6 +87,11 @@ section.woo-shop-filter > div:last-child p {
   line-height: 1.8;
   display: block;
 }
+@media only screen and (max-width: 640px) {
+  section.woo-shop-filter > div {
+    width: 50% !important;
+  }
+}
 
 section.woo-shop-filter-nav {
   display: flex;
