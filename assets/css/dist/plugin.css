@@ -92,8 +92,10 @@ section.woo-shop-filter > div:last-child p {
     width: 50% !important;
   }
 }
-section.woo-shop-filter > div:nth-child(2), section.woo-shop-filter > div:nth-child(3) em {
-  display: none;
+@media only screen and (max-width: 640px) {
+  section.woo-shop-filter > div:nth-child(2), section.woo-shop-filter > div:nth-child(3) em {
+    display: none;
+  }
 }
 
 section.woo-shop-filter-nav {
