@@ -117,6 +117,18 @@ class Plugin {
 	}
 
 	/**
+	 * Search Shortcode
+	 *
+	 * @return string
+	 */
+	function woo_shop_filter_search() {
+		ob_start();
+		get_form();
+
+		return ob_get_clean();
+	}
+
+	/**
 	 * Plugin Entry point based on Singleton
 	 *
 	 * @return Plugin $plugin Instance of the plugin abstraction.
