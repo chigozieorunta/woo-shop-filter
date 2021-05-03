@@ -130,6 +130,13 @@ class Plugin {
 		return ob_get_clean();
 	}
 
+	public function woo_shop_filter_listing() {
+		ob_start();
+		get_listing();
+
+		return ob_get_clean();
+	}
+
 	/**
 	 * Plugin Entry point based on Singleton
 	 *
