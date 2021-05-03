@@ -190,4 +190,109 @@ class Plugin {
 
 		$query->set( 'meta_query', $meta_query );
 	}
+
+	public function get_listing() {
+
+		if ( isset( $_POST['brand'] ) ) {
+			$meta_query[] = array(
+				'key'     => 'brand',
+				'value'   => $_POST['brand'],
+				'compare' => '='
+			);
+		}
+
+		if ( isset( $_POST['model'] ) ) {
+			$meta_query[] = array(
+				'key'     => 'model',
+				'value'   => $_POST['model'],
+				'compare' => '='
+			);
+		}
+
+		if ( isset( $_POST['year'] ) ) {
+			$meta_query[] = array(
+				'key'     => 'year',
+				'value'   => $_POST['year'],
+				'compare' => '='
+			);
+		}
+
+		$query = new WP_Query( array(
+			'post_type'  => 'product',
+			'meta_query' => $meta_query
+		) );
+
+		$posts = $query->posts;
+
+		foreach($posts as $post) {
+
+			$_product = wc_get_product( $post->ID );
+
+			$image = wp_get_attachment_image_src(
+				get_post_thumbnail_id( $post->ID ),
+				'full'
+			);
+
+			$product_link = sprintf(
+				'<a href="%1$s">View More</a>',
+				get_the_permalink( $post->ID )
+			);
+
+			$product_image = sprintf(
+				'<div><a href="%2$s"><img src="%1$s"></a></div>',
+				$image[0],
+				get_the_permalink( $post->ID )
+			);
+
+			$product_excerpt = sprintf(
+				'<div>%1$s</div>%2$s',
+				get_the_excerpt( $post->ID ),
+				$product_link
+			);
+
+			$product_details = sprintf(
+				'<div>%3$s<h2><a href="%5$s">%1$s</a></h2>%4$s%2$s</div>',
+				$_product->get_title(),
+				$product_excerpt,
+				$_product->get_sku(),
+				$_product->get_rating_html(),
+				get_the_permalink( $post->ID )
+			);
+
+			$product_price = sprintf(
+				'<div><em>%2$s</em><h2>%1$s</h2>%3$s</div>',
+				$_product->get_price_html(),
+				$_product->get_sku() ? '&nbsp;' : '',
+				'<p>We at Bakers Locksmith are GSA certified technicians trained at LSI (Lockmasters Security Institute).</p>
+				<p>Call the store at:<br/>937-328-LOCK (5625)<br/>For Northern Locations: 937-492-2235<br/>bakerslocksmith@icloud.com</p>'
+			);
+
+			$products .= sprintf(
+				'<section class="shop-filter">%1$s%2$s%3$s</section>',
+				$product_image,
+				$product_details,
+				$product_price
+			);
+
+		}
+
+		$product_count = sprintf(
+			'<span>Showing %1$s Products</span>',
+			count($posts)
+		);
+
+		$product_all = sprintf(
+			'<span><a href="%1$s">All Products</a></span>',
+			wc_get_page_permalink( 'shop' )
+		);
+
+		$products = sprintf(
+			'<section class="shop-filter-nav">%1$s%2$s</section>%3$s',
+			$product_count,
+			$product_all,
+			$products
+		);
+
+		echo $products;
+	}
 }
