@@ -70,7 +70,9 @@ class Plugin {
 	 *
 	 * @return string
 	 */
-	public function get_select( $results ) {
+	public function get_select( $arg ) {
+		$results = $this->get_custom_fields_data( $arg );
+
 		foreach($results as $result) {
 			$options .= sprintf(
 				'<option name="%1$s">%1$s</option>',
