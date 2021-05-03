@@ -36,6 +36,7 @@ class Plugin {
 		add_action( 'woocommerce_before_shop_loop', [ $this, 'get_form' ] );
 
 		add_shortcode( 'woo-shop-filter-search', 'woo_shop_filter_search' );
+		add_shortcode( 'woo-shop-filter-listing', 'woo_shop_filter_listing' );
 	}
 
 	/**
