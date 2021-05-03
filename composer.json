@@ -17,5 +17,10 @@
     "wp-coding-standards/wpcs": "^2.3",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "WooShopFilter\\": "src/"
+    }
   }
 }
