@@ -155,4 +155,39 @@ class Plugin {
 
 		return self::$instance;
 	}
+
+	/**
+	 * Shop Query
+	 *
+	 * @return void
+	 */
+	public function woo_shop_filter_query( $query ) {
+		$meta_query = $query->get( 'meta_query' );
+
+		if ( $_POST['brand'] ) {
+			$meta_query[] = array(
+				'key'     => 'brand',
+				'value'   => $_POST['brand'],
+				'compare' => '='
+			);
+		}
+
+		if ( $_POST['model'] ) {
+			$meta_query[] = array(
+				'key'     => 'model',
+				'value'   => $_POST['model'],
+				'compare' => '='
+			);
+		}
+
+		if ( $_POST['year'] ) {
+			$meta_query[] = array(
+				'key'     => 'year',
+				'value'   => $_POST['year'],
+				'compare' => '='
+			);
+		}
+
+		$query->set( 'meta_query', $meta_query );
+	}
 }
