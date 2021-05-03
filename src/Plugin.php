@@ -130,6 +130,11 @@ class Plugin {
 		return ob_get_clean();
 	}
 
+	/**
+	 * Listing Shortcode
+	 *
+	 * @return string
+	 */
 	public function woo_shop_filter_listing() {
 		ob_start();
 		get_listing();
