@@ -39,7 +39,7 @@ class Plugin {
 		add_shortcode( 'woo-shop-filter-listing', 'woo_shop_filter_listing' );
 	}
 
-	/**
+	/**g
 	 * Enqueue CSS method
 	 *
 	 * @return void
@@ -112,10 +112,10 @@ class Plugin {
 	public function get_form() {
 		$form = sprintf(
 			'<form class="woo-shop-filter" method="POST" action="./">%1$s%2$s%3$s%4$s</form>',
-			get_select( 'brand' ),
-			get_select( 'model' ),
-			get_select( 'year' ),
-			get_button()
+			$this->get_select( 'brand' ),
+			$this->get_select( 'model' ),
+			$this->get_select( 'year' ),
+			$this->get_button()
 		);
 
 		echo $form;
