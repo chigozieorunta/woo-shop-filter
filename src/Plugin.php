@@ -194,6 +194,11 @@ class Plugin {
 		$query->set( 'meta_query', $meta_query );
 	}
 
+	/**
+	 * Get listing
+	 *
+	 * @return string
+	 */
 	public function get_listing() {
 
 		if ( isset( $_POST['brand'] ) ) {
