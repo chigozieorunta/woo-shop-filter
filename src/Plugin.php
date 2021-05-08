@@ -67,14 +67,14 @@ class Plugin {
 	/**
 	 * Get select input
 	 *
-	 * @param array $results Custom field data.
+	 * @param array $arg Custom field data.
 	 *
 	 * @return string
 	 */
 	public function get_select( $arg ) {
 		$results = $this->get_custom_fields_data( $arg );
 
-		foreach($results as $result) {
+		foreach( $results as $result ) {
 			$options .= sprintf(
 				'<option name="%1$s">%1$s</option>',
 				$result->meta_value
@@ -108,7 +108,7 @@ class Plugin {
 	/**
 	 * Get form
 	 *
-	 * @return string
+	 * @return void
 	 */
 	public function get_form() {
 		$form = sprintf(
@@ -162,6 +162,8 @@ class Plugin {
 	/**
 	 * Shop Query
 	 *
+	 * @param string $query search query.
+	 *
 	 * @return void
 	 */
 	public function woo_shop_filter_query( $query ) {
@@ -197,7 +199,7 @@ class Plugin {
 	/**
 	 * Get listing
 	 *
-	 * @return string
+	 * @return void
 	 */
 	public function get_listing() {
 
@@ -205,7 +207,7 @@ class Plugin {
 			$meta_query[] = array(
 				'key'     => 'brand',
 				'value'   => $_POST['brand'],
-				'compare' => '='
+				'compare' => '=',
 			);
 		}
 
@@ -213,7 +215,7 @@ class Plugin {
 			$meta_query[] = array(
 				'key'     => 'model',
 				'value'   => $_POST['model'],
-				'compare' => '='
+				'compare' => '=',
 			);
 		}
 
@@ -221,18 +223,20 @@ class Plugin {
 			$meta_query[] = array(
 				'key'     => 'year',
 				'value'   => $_POST['year'],
-				'compare' => '='
+				'compare' => '=',
 			);
 		}
 
-		$query = new WP_Query( array(
-			'post_type'  => 'product',
-			'meta_query' => $meta_query
-		) );
+		$query = new WP_Query(
+			array(
+				'post_type'  => 'product',
+				'meta_query' => $meta_query,
+			)
+		);
 
 		$posts = $query->posts;
 
-		foreach($posts as $post) {
+		foreach ( $posts as $post ) {
 
 			$_product = wc_get_product( $post->ID );
 
