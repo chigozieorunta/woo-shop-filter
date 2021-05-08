@@ -34,7 +34,7 @@ class Plugin {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_css' ] );
 		add_action( 'woocommerce_before_shop_loop', [ $this, 'get_form' ] );
-		add_action( 'woocommerce_product_query', 'woo_shop_filter_query' );
+		add_action( 'woocommerce_product_query', [ $this, 'woo_shop_filter_query' ] );
 
 		add_shortcode( 'woo-shop-filter-search', 'woo_shop_filter_search' );
 		add_shortcode( 'woo-shop-filter-listing', 'woo_shop_filter_listing' );
