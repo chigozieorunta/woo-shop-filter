@@ -38,9 +38,27 @@ class Plugin {
 
 		add_shortcode( 'woo-shop-filter-search', 'woo_shop_filter_search' );
 		add_shortcode( 'woo-shop-filter-listing', 'woo_shop_filter_listing' );
+
+		add_action( 'admin_menu', [ $this, 'woo_shop_filter_page' ] );
 	}
 
-	/**g
+	/**
+	 * Register a custom menu page.
+	 *
+	 * @return void
+	 */
+	public function woo_shop_filter_page() {
+		add_menu_page(
+			__( 'SQL To CPT', 'stc' ),
+			__( 'SQL To CPT', 'stc' ),
+			'manage_options',
+			'woo-shop-filter',
+			[ $this, 'woo_shop_filter_html' ],
+			'dashicons-database'
+		);
+	}
+
+	/**
 	 * Enqueue CSS method
 	 *
 	 * @return void
