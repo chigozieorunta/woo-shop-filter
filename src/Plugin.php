@@ -50,7 +50,7 @@ class Plugin {
 	public function woo_shop_filter_page() {
 		add_menu_page(
 			__( 'Woo Shop Filter', 'wsf' ),
-			__( 'Woo Shop Filter', 'stc' ),
+			__( 'Woo Shop Filter', 'wsf' ),
 			'manage_options',
 			'woo-shop-filter',
 			[ $this, 'woo_shop_filter_html' ],
