@@ -43,14 +43,14 @@ class Plugin {
 	}
 
 	/**
-	 * Register a custom menu page.
+	 * Register a custom plugin menu.
 	 *
 	 * @return void
 	 */
 	public function woo_shop_filter_page() {
 		add_menu_page(
-			__( 'SQL To CPT', 'stc' ),
-			__( 'SQL To CPT', 'stc' ),
+			__( 'Woo Shop Filter', 'wsf' ),
+			__( 'Woo Shop Filter', 'stc' ),
 			'manage_options',
 			'woo-shop-filter',
 			[ $this, 'woo_shop_filter_html' ],
