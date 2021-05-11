@@ -59,6 +59,18 @@ class Plugin {
 	}
 
 	/**
+	 * Display HTML for menu page
+	 *
+	 * @return string
+	 */
+	public function woo_shop_filter_html() {
+		ob_start();
+		readfile( __DIR__ . '/../woo-shop-filter.html' );
+
+		return ob_get_clean();
+	}
+
+	/**
 	 * Enqueue CSS method
 	 *
 	 * @return void
@@ -92,7 +104,7 @@ class Plugin {
 	public function get_select( $arg ) {
 		$results = $this->get_custom_fields_data( $arg );
 
-		foreach( $results as $result ) {
+		foreach ( $results as $result ) {
 			$options .= sprintf(
 				'<option name="%1$s">%1$s</option>',
 				$result->meta_value
