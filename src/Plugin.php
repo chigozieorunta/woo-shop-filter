@@ -32,7 +32,7 @@ class Plugin {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'wp_enqueue_scripts', [ $this, 'register_css' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'woo_shop_filter_css' ] );
 		add_action( 'woocommerce_before_shop_loop', [ $this, 'get_form' ] );
 		add_action( 'woocommerce_product_query', [ $this, 'woo_shop_filter_query' ] );
 
@@ -40,6 +40,7 @@ class Plugin {
 		add_shortcode( 'woo-shop-filter-listing', 'woo_shop_filter_listing' );
 
 		add_action( 'admin_menu', [ $this, 'woo_shop_filter_page' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'woo_shop_filter_admin_css' ] );
 	}
 
 	/**
@@ -61,13 +62,11 @@ class Plugin {
 	/**
 	 * Display HTML for menu page
 	 *
-	 * @return string
+	 * @return void
 	 */
 	public function woo_shop_filter_html() {
 		ob_start();
 		readfile( __DIR__ . '/../woo-shop-filter.html' );
-
-		return ob_get_clean();
 	}
 
 	/**
@@ -75,8 +74,17 @@ class Plugin {
 	 *
 	 * @return void
 	 */
-	public function register_css() {
+	public function woo_shop_filter_css() {
 		wp_enqueue_style( 'woo-shop-filter', plugin_dir_url( __FILE__ ) . '../assets/css/dist/plugin.css' );
+	}
+
+	/**
+	 * Enqueue Admin CSS method
+	 *
+	 * @return void
+	 */
+	public function woo_shop_filter_admin_css() {
+		wp_enqueue_style( 'woo-shop-filter-admin', plugin_dir_url( __FILE__ ) . '../assets/css/dist/admin.css' );
 	}
 
 	/**
